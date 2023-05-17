@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import "../../App.css";
 
 const Radio = ({ Arr, radioval , setRadioval }) => {
-
+  console.log(Arr)
   useEffect(() => {
-    // document.getElementsByName("sizeBy").forEach()=>{
-
-    // }
-
-    // Value of checked radio button in react
-  }, [])
+    document.getElementsByName("sizeBy").forEach((item) => {
+      item.addEventListener("click", () => {
+        setRadioval(item.value);
+      });
+    });
+  });  
   
 
   const showArr = (Arr) =>{
@@ -21,7 +21,7 @@ const Radio = ({ Arr, radioval , setRadioval }) => {
           name="sizeBy"
           value={Arr[i].label}
           id={Arr[i].label}
-          defaultChecked
+          defaultChecked={i===0 ? true : false}
         />
         <label htmlFor={Arr[i].label} >{Arr[i].label}</label>
 

@@ -10,6 +10,7 @@ const Text = ({Title , Placeholder}) => {
         type="text"
         placeholder={Placeholder}
         className="input-text"
+        key={Title}
       />
     </div>
   );
